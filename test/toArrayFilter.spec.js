@@ -60,6 +60,11 @@ describe("toArrayFilter", function() {
   }));
 
 
+  if("should work with null", inject(function(toArrayFilter) {
+    var obj = null;
+    expect(toArrayFilter(obj)).toEqual([]);
+  }));
+
   it("should not work with non-objects", inject(function(toArrayFilter) {
     var obj = 'some string';
     expect(function() {
